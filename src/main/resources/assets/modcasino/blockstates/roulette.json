@@ -1,0 +1,64 @@
+{
+	"variants": {
+		"facing=north,part=front_left": {
+			"model": "modcasino:block/roulette_front_left"
+		},
+		"facing=north,part=front_right": {
+			"model": "modcasino:block/roulette_front_right"
+		},
+		"facing=north,part=back_left": {
+			"model": "modcasino:block/roulette_back_left"
+		},
+		"facing=north,part=back_right": {
+			"model": "modcasino:block/roulette_back_right"
+		},
+		"facing=east,part=front_left": {
+			"model": "modcasino:block/roulette_front_left",
+			"y": 90
+		},
+		"facing=east,part=front_right": {
+			"model": "modcasino:block/roulette_front_right",
+			"y": 90
+		},
+		"facing=east,part=back_left": {
+			"model": "modcasino:block/roulette_back_left",
+			"y": 90
+		},
+		"facing=east,part=back_right": {
+			"model": "modcasino:block/roulette_back_right",
+			"y": 90
+		},
+		"facing=south,part=front_left": {
+			"model": "modcasino:block/roulette_front_left",
+			"y": 180
+		},
+		"facing=south,part=front_right": {
+			"model": "modcasino:block/roulette_front_right",
+			"y": 180
+		},
+		"facing=south,part=back_left": {
+			"model": "modcasino:block/roulette_back_left",
+			"y": 180
+		},
+		"facing=south,part=back_right": {
+			"model": "modcasino:block/roulette_back_right",
+			"y": 180
+		},
+		"facing=west,part=front_left": {
+			"model": "modcasino:block/roulette_front_left",
+			"y": 270
+		},
+		"facing=west,part=front_right": {
+			"model": "modcasino:block/roulette_front_right",
+			"y": 270
+		},
+		"facing=west,part=back_left": {
+			"model": "modcasino:block/roulette_back_left",
+			"y": 270
+		},
+		"facing=west,part=back_right": {
+			"model": "modcasino:block/roulette_back_right",
+			"y": 270
+		}
+	}
+}

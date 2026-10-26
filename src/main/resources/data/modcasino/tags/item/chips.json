@@ -1,0 +1,17 @@
+{
+	"replace": false,
+	"values": [
+		"modcasino:1k_chip",
+		"modcasino:5k_chip",
+		"modcasino:25k_chip",
+		"modcasino:100k_chip",
+		"modcasino:500k_chip",
+		"modcasino:1m_chip",
+		"modcasino:5m_chip",
+		"modcasino:10m_chip",
+		"modcasino:50m_chip",
+		"modcasino:100m_chip",
+		"modcasino:500m_chip",
+		"modcasino:1b_chip"
+	]
+}

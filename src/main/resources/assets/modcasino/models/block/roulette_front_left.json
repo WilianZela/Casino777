@@ -1,0 +1,137 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"wood": "modcasino:block/roulette_wood",
+		"plinth": "modcasino:block/roulette_plinth",
+		"rail": "modcasino:block/roulette_rail",
+		"felt": "modcasino:block/roulette_felt",
+		"gold": "modcasino:block/roulette_gold",
+		"wheel": "modcasino:entity/roulette_wheel",
+		"particle": "modcasino:block/roulette_wood"
+	},
+	"elements": [
+		{
+			"from": [
+				0,
+				0,
+				1.5
+			],
+			"to": [
+				14.5,
+				1.5,
+				16
+			],
+			"faces": {
+				"down": {
+					"texture": "#plinth"
+				},
+				"up": {
+					"texture": "#plinth"
+				},
+				"north": {
+					"texture": "#plinth"
+				},
+				"south": {
+					"texture": "#plinth"
+				},
+				"west": {
+					"texture": "#plinth"
+				},
+				"east": {
+					"texture": "#plinth"
+				}
+			}
+		},
+		{
+			"from": [
+				1,
+				1.5,
+				1.5
+			],
+			"to": [
+				14.5,
+				9,
+				15
+			],
+			"faces": {
+				"up": {
+					"texture": "#wood"
+				},
+				"north": {
+					"texture": "#wood"
+				},
+				"south": {
+					"texture": "#wood"
+				},
+				"west": {
+					"texture": "#wood"
+				},
+				"east": {
+					"texture": "#wood"
+				}
+			}
+		},
+		{
+			"from": [
+				0,
+				9,
+				0
+			],
+			"to": [
+				16,
+				12,
+				16
+			],
+			"faces": {
+				"down": {
+					"texture": "#wood"
+				},
+				"up": {
+					"texture": "#felt",
+					"uv": [
+						8.0,
+						0.0,
+						16.0,
+						8.0
+					]
+				},
+				"north": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					]
+				},
+				"east": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					]
+				},
+				"south": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					]
+				},
+				"west": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					]
+				}
+			}
+		}
+	]
+}

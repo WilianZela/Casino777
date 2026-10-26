@@ -1,0 +1,284 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"chrome": "modcasino:block/chair_metal",
+		"body": "modcasino:block/chair_wheel",
+		"particle": "modcasino:block/chair_seat"
+	},
+	"elements": [
+		{
+			"from": [
+				2,
+				1,
+				7.2
+			],
+			"to": [
+				14,
+				2,
+				8.8
+			],
+			"faces": {
+				"down": {
+					"texture": "#chrome"
+				},
+				"up": {
+					"texture": "#chrome"
+				},
+				"north": {
+					"texture": "#chrome"
+				},
+				"south": {
+					"texture": "#chrome"
+				},
+				"west": {
+					"texture": "#chrome"
+				},
+				"east": {
+					"texture": "#chrome"
+				}
+			},
+			"rotation": {
+				"angle": 45,
+				"axis": "y",
+				"origin": [
+					8,
+					1,
+					8
+				]
+			}
+		},
+		{
+			"from": [
+				7.2,
+				1,
+				2
+			],
+			"to": [
+				8.8,
+				2,
+				14
+			],
+			"faces": {
+				"down": {
+					"texture": "#chrome"
+				},
+				"up": {
+					"texture": "#chrome"
+				},
+				"north": {
+					"texture": "#chrome"
+				},
+				"south": {
+					"texture": "#chrome"
+				},
+				"west": {
+					"texture": "#chrome"
+				},
+				"east": {
+					"texture": "#chrome"
+				}
+			},
+			"rotation": {
+				"angle": 45,
+				"axis": "y",
+				"origin": [
+					8,
+					1,
+					8
+				]
+			}
+		},
+		{
+			"from": [
+				3,
+				0,
+				3
+			],
+			"to": [
+				4.6,
+				1.5,
+				4.6
+			],
+			"faces": {
+				"down": {
+					"texture": "#body"
+				},
+				"up": {
+					"texture": "#body"
+				},
+				"north": {
+					"texture": "#body"
+				},
+				"south": {
+					"texture": "#body"
+				},
+				"west": {
+					"texture": "#body"
+				},
+				"east": {
+					"texture": "#body"
+				}
+			}
+		},
+		{
+			"from": [
+				11.4,
+				0,
+				3
+			],
+			"to": [
+				13,
+				1.5,
+				4.6
+			],
+			"faces": {
+				"down": {
+					"texture": "#body"
+				},
+				"up": {
+					"texture": "#body"
+				},
+				"north": {
+					"texture": "#body"
+				},
+				"south": {
+					"texture": "#body"
+				},
+				"west": {
+					"texture": "#body"
+				},
+				"east": {
+					"texture": "#body"
+				}
+			}
+		},
+		{
+			"from": [
+				3,
+				0,
+				11.4
+			],
+			"to": [
+				4.6,
+				1.5,
+				13
+			],
+			"faces": {
+				"down": {
+					"texture": "#body"
+				},
+				"up": {
+					"texture": "#body"
+				},
+				"north": {
+					"texture": "#body"
+				},
+				"south": {
+					"texture": "#body"
+				},
+				"west": {
+					"texture": "#body"
+				},
+				"east": {
+					"texture": "#body"
+				}
+			}
+		},
+		{
+			"from": [
+				11.4,
+				0,
+				11.4
+			],
+			"to": [
+				13,
+				1.5,
+				13
+			],
+			"faces": {
+				"down": {
+					"texture": "#body"
+				},
+				"up": {
+					"texture": "#body"
+				},
+				"north": {
+					"texture": "#body"
+				},
+				"south": {
+					"texture": "#body"
+				},
+				"west": {
+					"texture": "#body"
+				},
+				"east": {
+					"texture": "#body"
+				}
+			}
+		},
+		{
+			"from": [
+				6.5,
+				2,
+				6.5
+			],
+			"to": [
+				9.5,
+				4,
+				9.5
+			],
+			"faces": {
+				"down": {
+					"texture": "#chrome"
+				},
+				"up": {
+					"texture": "#chrome"
+				},
+				"north": {
+					"texture": "#chrome"
+				},
+				"south": {
+					"texture": "#chrome"
+				},
+				"west": {
+					"texture": "#chrome"
+				},
+				"east": {
+					"texture": "#chrome"
+				}
+			}
+		},
+		{
+			"from": [
+				7.3,
+				4,
+				7.3
+			],
+			"to": [
+				8.7,
+				6,
+				8.7
+			],
+			"faces": {
+				"down": {
+					"texture": "#chrome"
+				},
+				"up": {
+					"texture": "#chrome"
+				},
+				"north": {
+					"texture": "#chrome"
+				},
+				"south": {
+					"texture": "#chrome"
+				},
+				"west": {
+					"texture": "#chrome"
+				},
+				"east": {
+					"texture": "#chrome"
+				}
+			}
+		}
+	]
+}

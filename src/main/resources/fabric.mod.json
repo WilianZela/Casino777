@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "modcasino",
+	"version": "${version}",
+	"name": "Modcasino",
+	"description": "Casino blocks for Minecraft, starting with the Jackpot 777 slot machine.",
+	"authors": [
+		"HakyoSinFunas"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/modcasino/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"cl.hakyo.Modcasino"
+		],
+		"client": [
+			"cl.hakyo.client.ModcasinoClient"
+		],
+		"fabric-datagen": [
+			"cl.hakyo.client.ModcasinoDataGenerator"
+		]
+	},
+	"mixins": [
+		"modcasino.mixins.json",
+		{
+			"config": "modcasino.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
