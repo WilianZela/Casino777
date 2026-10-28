@@ -5,6 +5,7 @@ import cl.hakyo.registry.ModBlocks;
 import cl.hakyo.registry.ModCreativeTabs;
 import cl.hakyo.registry.ModEntities;
 import cl.hakyo.registry.ModItems;
+import cl.hakyo.registry.ModSounds;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ public class Modcasino implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModSounds.register();
 		ModItems.register();
 		ModBlocks.register();
 		ModEntities.register();

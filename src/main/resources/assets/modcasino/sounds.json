@@ -1,0 +1,10 @@
+{
+	"plush_squeak": {
+		"subtitle": "subtitles.modcasino.plush_squeak",
+		"sounds": [
+			"modcasino:plush/plush_squeak1",
+			"modcasino:plush/plush_squeak2",
+			"modcasino:plush/plush_squeak3"
+		]
+	}
+}

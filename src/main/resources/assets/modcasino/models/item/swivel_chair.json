@@ -3,7 +3,10 @@
 	"textures": {
 		"chrome": "modcasino:block/chair_metal",
 		"body": "modcasino:block/chair_wheel",
-		"particle": "modcasino:block/chair_seat"
+		"particle": "modcasino:block/chair_seat",
+		"seat": "modcasino:block/chair_seat",
+		"back": "modcasino:block/chair_back",
+		"arm": "modcasino:block/chair_arm"
 	},
 	"elements": [
 		{
@@ -485,22 +488,22 @@
 			],
 			"faces": {
 				"down": {
-					"texture": "#red"
+					"texture": "#seat"
 				},
 				"up": {
-					"texture": "#red"
+					"texture": "#seat"
 				},
 				"north": {
-					"texture": "#red"
+					"texture": "#seat"
 				},
 				"south": {
-					"texture": "#red"
+					"texture": "#seat"
 				},
 				"west": {
-					"texture": "#red"
+					"texture": "#seat"
 				},
 				"east": {
-					"texture": "#red"
+					"texture": "#seat"
 				}
 			}
 		},
@@ -517,22 +520,58 @@
 			],
 			"faces": {
 				"down": {
-					"texture": "#red"
+					"texture": "#back",
+					"uv": [
+						4,
+						3.4,
+						12,
+						5
+					]
 				},
 				"up": {
-					"texture": "#red"
+					"texture": "#back",
+					"uv": [
+						4,
+						11,
+						12,
+						12.6
+					]
 				},
 				"north": {
-					"texture": "#red"
+					"texture": "#back",
+					"uv": [
+						4,
+						0,
+						12,
+						6.5
+					]
 				},
 				"south": {
-					"texture": "#red"
+					"texture": "#back",
+					"uv": [
+						4,
+						0,
+						12,
+						6.5
+					]
 				},
 				"west": {
-					"texture": "#red"
+					"texture": "#back",
+					"uv": [
+						11,
+						0,
+						12.6,
+						6.5
+					]
 				},
 				"east": {
-					"texture": "#red"
+					"texture": "#back",
+					"uv": [
+						3.4,
+						0,
+						5,
+						6.5
+					]
 				}
 			}
 		},
@@ -549,22 +588,22 @@
 			],
 			"faces": {
 				"down": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"up": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"north": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"south": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"west": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"east": {
-					"texture": "#red"
+					"texture": "#arm"
 				}
 			}
 		},
@@ -581,22 +620,22 @@
 			],
 			"faces": {
 				"down": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"up": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"north": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"south": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"west": {
-					"texture": "#red"
+					"texture": "#arm"
 				},
 				"east": {
-					"texture": "#red"
+					"texture": "#arm"
 				}
 			}
 		}

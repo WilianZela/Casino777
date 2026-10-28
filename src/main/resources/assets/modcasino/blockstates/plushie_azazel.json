@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "modcasino:block/plushie_azazel"
+		},
+		"facing=east": {
+			"model": "modcasino:block/plushie_azazel",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "modcasino:block/plushie_azazel",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "modcasino:block/plushie_azazel",
+			"y": 270
+		}
+	}
+}

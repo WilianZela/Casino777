@@ -1,0 +1,267 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"wood": "modcasino:block/roulette_wood",
+		"plinth": "modcasino:block/roulette_plinth",
+		"rail": "modcasino:block/roulette_rail",
+		"railtop": "modcasino:block/roulette_railtop",
+		"particle": "modcasino:block/roulette_wood",
+		"felt": "modcasino:block/roulette_felt_front_middle"
+	},
+	"elements": [
+		{
+			"from": [
+				0.0,
+				0,
+				1.0
+			],
+			"to": [
+				16.0,
+				1.5,
+				16.0
+			],
+			"faces": {
+				"north": {
+					"texture": "#plinth",
+					"uv": [
+						0.0,
+						14.5,
+						16.0,
+						16
+					]
+				},
+				"south": {
+					"texture": "#plinth",
+					"uv": [
+						0.0,
+						14.5,
+						16.0,
+						16
+					]
+				},
+				"west": {
+					"texture": "#plinth",
+					"uv": [
+						1.0,
+						14.5,
+						16.0,
+						16
+					]
+				},
+				"east": {
+					"texture": "#plinth",
+					"uv": [
+						0.0,
+						14.5,
+						15.0,
+						16
+					]
+				},
+				"down": {
+					"texture": "#plinth",
+					"uv": [
+						0,
+						10,
+						16,
+						14
+					]
+				},
+				"up": {
+					"texture": "#plinth",
+					"uv": [
+						0,
+						10,
+						16,
+						14
+					]
+				}
+			}
+		},
+		{
+			"from": [
+				0.0,
+				1.5,
+				2.0
+			],
+			"to": [
+				16.0,
+				9,
+				16.0
+			],
+			"faces": {
+				"up": {
+					"texture": "#wood",
+					"uv": [
+						0.0,
+						2.0,
+						16.0,
+						16.0
+					]
+				},
+				"north": {
+					"texture": "#wood",
+					"uv": [
+						0.0,
+						7,
+						16.0,
+						14.5
+					]
+				},
+				"south": {
+					"texture": "#wood",
+					"uv": [
+						0.0,
+						7,
+						16.0,
+						14.5
+					]
+				},
+				"west": {
+					"texture": "#wood",
+					"uv": [
+						2.0,
+						7,
+						16.0,
+						14.5
+					]
+				},
+				"east": {
+					"texture": "#wood",
+					"uv": [
+						0.0,
+						7,
+						14.0,
+						14.5
+					]
+				}
+			}
+		},
+		{
+			"from": [
+				0.0,
+				9,
+				0.0
+			],
+			"to": [
+				16.0,
+				12,
+				16.0
+			],
+			"faces": {
+				"down": {
+					"texture": "#plinth",
+					"uv": [
+						0,
+						10,
+						16,
+						14
+					]
+				},
+				"up": {
+					"texture": "#felt",
+					"uv": [
+						0.0,
+						0.0,
+						16.0,
+						16.0
+					]
+				},
+				"north": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						5.09,
+						16,
+						16
+					]
+				},
+				"south": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						5.09,
+						16,
+						16
+					]
+				},
+				"west": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						5.09,
+						16,
+						16
+					]
+				},
+				"east": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						5.09,
+						16,
+						16
+					]
+				}
+			}
+		},
+		{
+			"from": [
+				0.0,
+				12,
+				0.0
+			],
+			"to": [
+				16.0,
+				13.4,
+				1.5
+			],
+			"faces": {
+				"up": {
+					"texture": "#railtop",
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					]
+				},
+				"north": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						5.09
+					]
+				},
+				"south": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						5.09
+					]
+				},
+				"west": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						5.09
+					]
+				},
+				"east": {
+					"texture": "#rail",
+					"uv": [
+						0,
+						0,
+						16,
+						5.09
+					]
+				}
+			}
+		}
+	]
+}

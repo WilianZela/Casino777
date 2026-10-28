@@ -278,7 +278,7 @@ public class RouletteBlockEntity extends BlockEntity {
 			CompoundTag entry = new CompoundTag();
 			entry.putUUID("Player", bet.player());
 			entry.putString("Chip", BuiltInRegistries.ITEM.getKey(bet.chip()).toString());
-			entry.putInt("Zone", bet.zone().ordinal());
+			entry.putInt("Zone", bet.zone().id());
 			list.add(entry);
 		}
 		tag.put("Bets", list);
@@ -299,7 +299,7 @@ public class RouletteBlockEntity extends BlockEntity {
 			ResourceLocation id = ResourceLocation.tryParse(entry.getString("Chip"));
 			Item chip = id == null ? Items.AIR : BuiltInRegistries.ITEM.get(id);
 			if (chip != Items.AIR && entry.hasUUID("Player")) {
-				bets.add(new Bet(entry.getUUID("Player"), chip, RouletteBet.byOrdinal(entry.getInt("Zone"))));
+				bets.add(new Bet(entry.getUUID("Player"), chip, RouletteBet.byId(entry.getInt("Zone"))));
 			}
 		}
 	}

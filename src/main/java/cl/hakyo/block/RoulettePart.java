@@ -3,31 +3,40 @@ package cl.hakyo.block;
 import net.minecraft.util.StringRepresentable;
 
 public enum RoulettePart implements StringRepresentable {
-	FRONT_LEFT("front_left", false, false),
-	FRONT_RIGHT("front_right", true, false),
-	BACK_LEFT("back_left", false, true),
-	BACK_RIGHT("back_right", true, true);
+	FRONT_LEFT("front_left", 0, false),
+	FRONT_MIDDLE("front_middle", 1, false),
+	FRONT_RIGHT("front_right", 2, false),
+	BACK_LEFT("back_left", 0, true),
+	BACK_MIDDLE("back_middle", 1, true),
+	BACK_RIGHT("back_right", 2, true);
+
+	public static final int COLUMNS = 3;
 
 	private final String name;
-	private final boolean right;
+	private final int column;
 	private final boolean back;
 
-	RoulettePart(String name, boolean right, boolean back) {
+	RoulettePart(String name, int column, boolean back) {
 		this.name = name;
-		this.right = right;
+		this.column = column;
 		this.back = back;
 	}
 
-	public boolean right() {
-		return right;
+	public int column() {
+		return column;
 	}
 
 	public boolean back() {
 		return back;
 	}
 
-	public static RoulettePart of(boolean right, boolean back) {
-		return back ? (right ? BACK_RIGHT : BACK_LEFT) : (right ? FRONT_RIGHT : FRONT_LEFT);
+	public static RoulettePart of(int column, boolean back) {
+		for (RoulettePart part : values()) {
+			if (part.column == column && part.back == back) {
+				return part;
+			}
+		}
+		throw new IllegalArgumentException();
 	}
 
 	@Override

@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "modcasino:block/funko_zzilexx"
+		},
+		"facing=east": {
+			"model": "modcasino:block/funko_zzilexx",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "modcasino:block/funko_zzilexx",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "modcasino:block/funko_zzilexx",
+			"y": 270
+		}
+	}
+}

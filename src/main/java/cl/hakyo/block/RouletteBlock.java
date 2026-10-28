@@ -43,10 +43,7 @@ public class RouletteBlock extends BaseEntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final EnumProperty<RoulettePart> PART = EnumProperty.create("part", RoulettePart.class);
 
-	private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 13.0D, 16.0D);
-	private static final double STRIP_DEPTH = 0.92D;
-	private static final double RED_LIMIT = 0.72D;
-	private static final double BLACK_LIMIT = 1.28D;
+	private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D);
 
 	public RouletteBlock(Properties properties) {
 		super(properties);
@@ -65,7 +62,7 @@ public class RouletteBlock extends BaseEntityBlock {
 
 	public static BlockPos partPos(BlockPos origin, Direction facing, RoulettePart part) {
 		BlockPos result = origin;
-		if (part.right()) {
+		for (int i = 0; i < part.column(); i++) {
 			result = result.relative(facing.getCounterClockWise());
 		}
 		if (part.back()) {
@@ -78,7 +75,7 @@ public class RouletteBlock extends BaseEntityBlock {
 		Direction facing = state.getValue(FACING);
 		RoulettePart part = state.getValue(PART);
 		BlockPos result = pos;
-		if (part.right()) {
+		for (int i = 0; i < part.column(); i++) {
 			result = result.relative(facing.getClockWise());
 		}
 		if (part.back()) {
@@ -114,13 +111,14 @@ public class RouletteBlock extends BaseEntityBlock {
 	protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
 		Direction facing = state.getValue(FACING);
 		RoulettePart part = state.getValue(PART);
-		Direction lateral = part.right() ? facing.getClockWise() : facing.getCounterClockWise();
 		Direction depth = part.back() ? facing : facing.getOpposite();
 		RoulettePart expected = null;
-		if (direction == lateral) {
-			expected = RoulettePart.of(!part.right(), part.back());
+		if (direction == facing.getCounterClockWise() && part.column() < RoulettePart.COLUMNS - 1) {
+			expected = RoulettePart.of(part.column() + 1, part.back());
+		} else if (direction == facing.getClockWise() && part.column() > 0) {
+			expected = RoulettePart.of(part.column() - 1, part.back());
 		} else if (direction == depth) {
-			expected = RoulettePart.of(part.right(), !part.back());
+			expected = RoulettePart.of(part.column(), !part.back());
 		}
 		if (expected != null && !(neighborState.is(this) && neighborState.getValue(PART) == expected && neighborState.getValue(FACING) == facing)) {
 			return Blocks.AIR.defaultBlockState();
@@ -141,7 +139,7 @@ public class RouletteBlock extends BaseEntityBlock {
 		for (RoulettePart part : RoulettePart.values()) {
 			BlockPos other = partPos(origin, facing, part);
 			if (!other.equals(pos) && level.getBlockState(other).is(this)) {
-				level.setBlock(other, Blocks.AIR.defaultBlockState(), 35);
+				level.setBlock(other, Blocks.AIR.defaultBlockState(), 51);
 			}
 		}
 		return super.playerWillDestroy(level, pos, state, player);
@@ -213,12 +211,9 @@ public class RouletteBlock extends BaseEntityBlock {
 			}
 		}
 		RoulettePart part = state.getValue(PART);
-		depth += part.back() ? 1.0D : 0.0D;
-		side += part.right() ? 1.0D : 0.0D;
-		if (depth > STRIP_DEPTH) {
-			return null;
-		}
-		return side < RED_LIMIT ? RouletteBet.RED : side < BLACK_LIMIT ? RouletteBet.GREEN : RouletteBet.BLACK;
+		double x = (side + part.column()) * 16.0D;
+		double y = RouletteBet.TABLE_DEPTH - (depth + (part.back() ? 1.0D : 0.0D)) * 16.0D;
+		return RouletteBet.at(x, y);
 	}
 
 	@Override
@@ -252,7 +247,7 @@ public class RouletteBlock extends BaseEntityBlock {
 		if (!player.getAbilities().instabuild) {
 			stack.shrink(SlotPayouts.BET);
 		}
-		player.displayClientMessage(Component.translatable("message.modcasino.roulette_bet", Component.translatable("message.modcasino.roulette_" + bet.key()), table.betsOf(player.getUUID())), true);
+		player.displayClientMessage(Component.translatable("message.modcasino.roulette_bet", bet.label(), table.betsOf(player.getUUID())), true);
 		return ItemInteractionResult.CONSUME;
 	}
 

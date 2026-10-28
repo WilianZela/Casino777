@@ -24,7 +24,8 @@ public class SlotMachineRenderer implements BlockEntityRenderer<SlotMachineBlock
 	private static final ResourceLocation NEON_A = Modcasino.id("textures/entity/slot_neon_a.png");
 	private static final ResourceLocation NEON_B = Modcasino.id("textures/entity/slot_neon_b.png");
 	private static final ResourceLocation TUBE = Modcasino.id("textures/block/sm_neon.png");
-	private static final ResourceLocation BLACK = Modcasino.id("textures/block/sm_black.png");
+	private static final ResourceLocation LEVER_METAL = Modcasino.id("textures/entity/slot_lever_metal.png");
+	private static final ResourceLocation LEVER_KNOB = Modcasino.id("textures/block/sm_black.png");
 
 	private static final float[] REEL_CENTER_X = {5.4F, 8.0F, 10.6F};
 	private static final float REEL_HALF_WIDTH = 1.2F;
@@ -134,10 +135,15 @@ public class SlotMachineRenderer implements BlockEntityRenderer<SlotMachineBlock
 	private static void renderLever(MultiBufferSource buffers, PoseStack pose, float angle, int light) {
 		pose.pushPose();
 		pose.translate(0.5D / 16.0D, 7.5D / 16.0D, 6.5D / 16.0D);
+		VertexConsumer metal = buffers.getBuffer(RenderType.entityCutoutNoCull(LEVER_METAL));
+		Boxes.box(metal, pose.last(), -0.5F, -0.9F, -0.9F, 0.5F, 0.9F, 0.9F, light);
 		pose.mulPose(Axis.XP.rotationDegrees(angle));
-		box(buffers.getBuffer(RenderType.entityCutoutNoCull(BLACK)), pose.last(), -0.4F, 0.0F, -0.4F, 0.4F, 5.0F, 0.4F, 255, light);
-		box(buffers.getBuffer(RenderType.entityCutoutNoCull(BLACK)), pose.last(), -0.9F, -0.9F, -0.9F, 0.9F, 0.9F, 0.9F, 255, light);
-		box(buffers.getBuffer(RenderType.entityCutoutNoCull(BLACK)), pose.last(), -1.1F, 5.0F, -1.1F, 1.1F, 7.2F, 1.1F, 255, light);
+		Boxes.box(metal, pose.last(), -0.55F, 0.0F, -0.55F, 0.55F, 1.6F, 0.55F, light);
+		Boxes.box(metal, pose.last(), -0.4F, 1.6F, -0.4F, 0.4F, 5.4F, 0.4F, light);
+		VertexConsumer knob = buffers.getBuffer(RenderType.entityCutoutNoCull(LEVER_KNOB));
+		Boxes.box(knob, pose.last(), -1.15F, 5.35F, -0.75F, 1.15F, 6.85F, 0.75F, light);
+		Boxes.box(knob, pose.last(), -0.75F, 5.35F, -1.15F, 0.75F, 6.85F, 1.15F, light);
+		Boxes.box(knob, pose.last(), -0.75F, 4.95F, -0.75F, 0.75F, 7.25F, 0.75F, light);
 		pose.popPose();
 	}
 
@@ -229,29 +235,6 @@ public class SlotMachineRenderer implements BlockEntityRenderer<SlotMachineBlock
 				.setOverlay(OverlayTexture.NO_OVERLAY)
 				.setLight(LightTexture.FULL_BRIGHT)
 				.setNormal(pose, nx, ny, nz);
-	}
-
-	private static void box(VertexConsumer consumer, PoseStack.Pose pose, float ux1, float uy1, float uz1, float ux2, float uy2, float uz2, int shade, int light) {
-		float x1 = ux1 / 16.0F;
-		float y1 = uy1 / 16.0F;
-		float z1 = uz1 / 16.0F;
-		float x2 = ux2 / 16.0F;
-		float y2 = uy2 / 16.0F;
-		float z2 = uz2 / 16.0F;
-		quad(consumer, pose, shade, light, 0, -1, 0, x1, y1, z2, x1, y1, z1, x2, y1, z1, x2, y1, z2);
-		quad(consumer, pose, shade, light, 0, 1, 0, x1, y2, z1, x1, y2, z2, x2, y2, z2, x2, y2, z1);
-		quad(consumer, pose, shade, light, 0, 0, -1, x2, y1, z1, x1, y1, z1, x1, y2, z1, x2, y2, z1);
-		quad(consumer, pose, shade, light, 0, 0, 1, x1, y1, z2, x2, y1, z2, x2, y2, z2, x1, y2, z2);
-		quad(consumer, pose, shade, light, -1, 0, 0, x1, y1, z1, x1, y1, z2, x1, y2, z2, x1, y2, z1);
-		quad(consumer, pose, shade, light, 1, 0, 0, x2, y1, z2, x2, y1, z1, x2, y2, z1, x2, y2, z2);
-	}
-
-	private static void quad(VertexConsumer consumer, PoseStack.Pose pose, int shade, int light, float nx, float ny, float nz,
-			float ax, float ay, float az, float bx, float by, float bz, float cx, float cy, float cz, float dx, float dy, float dz) {
-		vertex(consumer, pose, shade, light, nx, ny, nz, ax, ay, az, 0.0F, 1.0F);
-		vertex(consumer, pose, shade, light, nx, ny, nz, bx, by, bz, 1.0F, 1.0F);
-		vertex(consumer, pose, shade, light, nx, ny, nz, cx, cy, cz, 1.0F, 0.0F);
-		vertex(consumer, pose, shade, light, nx, ny, nz, dx, dy, dz, 0.0F, 0.0F);
 	}
 
 	private static void vertex(VertexConsumer consumer, PoseStack.Pose pose, int shade, int light, float nx, float ny, float nz, float x, float y, float z, float u, float v) {

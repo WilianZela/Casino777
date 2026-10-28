@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "modcasino:block/plushie_tv_toxic_vt_2"
+		},
+		"facing=east": {
+			"model": "modcasino:block/plushie_tv_toxic_vt_2",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "modcasino:block/plushie_tv_toxic_vt_2",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "modcasino:block/plushie_tv_toxic_vt_2",
+			"y": 270
+		}
+	}
+}
